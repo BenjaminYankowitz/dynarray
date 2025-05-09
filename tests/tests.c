@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "dynarray.h"
+#include "../dynarray.h"
 #include "macroassert.h"
 
 int main()
@@ -17,6 +17,8 @@ int main()
     }
 
     for (int i = 0; i < dynarray_length(v); i++) {
+        int value;
+        assert_eq(lhs, (_Bool) 1)
         printf("v[%d] -> %d\n", i, v[i]);
     }
 

@@ -44,6 +44,9 @@ void _dynarray_pop(void *arr, void *dest);
     } while (0)
 
 #define dynarray_pop(arr, xptr) _dynarray_pop(arr, xptr)
+#define dynarray_get(arr, index, xptr) _dynarray_get(arr, index, &xptr)
+#define dynarray_set(arr, index, xptr) _dynarray_set(arr, index, &xptr)
+
 
 #define dynarray_capacity(arr) _dynarray_field_get(arr, CAPACITY)
 #define dynarray_length(arr) _dynarray_field_get(arr, LENGTH)
