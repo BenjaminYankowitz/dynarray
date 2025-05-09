@@ -3,6 +3,7 @@
 
 #include <stdlib.h>     // malloc
 #include <string.h>     // memcpy
+#include <stdbool.h> 
 
 /* Structure of a dynarray:
  * size_t capacity
@@ -28,6 +29,8 @@ void *_dynarray_resize(void *arr);
 
 void *_dynarray_push(void *arr, void *xptr);
 void _dynarray_pop(void *arr, void *dest);
+bool _dynarray_get(void *arr, size_t index, void *xptr);
+bool _dynarray_set(void *arr, size_t index, void *xptr);
 
 #define DYNARRAY_DEFAULT_CAP 1
 #define DYNARRAY_RESIZE_FACTOR 2

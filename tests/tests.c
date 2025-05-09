@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 #include "../dynarray.h"
 #include "macroassert.h"
 
@@ -18,10 +16,11 @@ int main()
 
     for (int i = 0; i < dynarray_length(v); i++) {
         int value;
-        assert_eq(lhs, (_Bool) 1)
+        assert_eq(dynarray_get(v,i,value), true);
+        assert_eq(value, v[i]);
         printf("v[%d] -> %d\n", i, v[i]);
     }
-
+    
     assert_eq(dynarray_length(v), 20);
     assert_lte(dynarray_length(v), dynarray_capacity(v));
 

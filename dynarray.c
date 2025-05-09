@@ -77,7 +77,7 @@ void _dynarray_pop(void *arr, void *dest)
     _dynarray_field_set(arr, LENGTH, dynarray_length(arr) - 1); // Decrement length.
 }
 
-_Bool _dynarray_get(void *arr, size_t index, void* xptr){
+bool _dynarray_get(void *arr, size_t index, void* xptr){
     if(index>=_dynarray_field_get(arr,LENGTH)||index<0)
         return 0;
     memcpy(arr + index * dynarray_stride(arr), xptr, dynarray_stride(arr));
@@ -85,7 +85,7 @@ _Bool _dynarray_get(void *arr, size_t index, void* xptr){
 }
 
 
-_Bool _dynarray_set(void *arr, size_t index, void* xptr){
+bool _dynarray_set(void *arr, size_t index, void* xptr){
     if(index>=_dynarray_field_get(arr,LENGTH)||index<0)
         return 0;
     memcpy(xptr,arr + index * dynarray_stride(arr), dynarray_stride(arr));
